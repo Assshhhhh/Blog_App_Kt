@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReadMoreActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/backgroundtexture"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/back_image_button"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/tv_read_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Add New Blog Here"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/back_image_button"
+                app:layout_constraintTop_toBottomOf="@+id/back_image_button" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_read_circ_image"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="19dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile1"
+                app:layout_constraintStart_toStartOf="@+id/tv_read_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_read_title" />
+
+            <TextView
+                android:id="@+id/tv_read_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/montserrat_light"
+                android:text="Username"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/profile_read_circ_image"
+                app:layout_constraintStart_toEndOf="@+id/profile_read_circ_image"
+                app:layout_constraintTop_toTopOf="@+id/profile_read_circ_image" />
+
+            <TextView
+                android:id="@+id/tv_read_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/montserrat_light"
+                android:text="27 Feb, 2024"
+                android:textColor="#C8C8C8"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_read_username"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_read_username"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="@+id/tv_read_date"
+                app:layout_constraintStart_toStartOf="@+id/profile_read_circ_image"
+                app:layout_constraintTop_toBottomOf="@+id/profile_read_circ_image" />
+
+
+            <!--<ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/divider2"
+        app:layout_constraintStart_toStartOf="@+id/divider2"
+        app:layout_constraintTop_toBottomOf="@+id/divider2">-->
+
+
+            <TextView
+                android:id="@+id/tv_read_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/montserrat_light"
+                android:padding="5dp"
+                android:text="Description"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/divider2"
+                app:layout_constraintStart_toStartOf="@+id/divider2"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_read_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        app:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shapeAppearanceOverlay="@style/round"
+        app:srcCompat="@drawable/ic_save_red_outline"
+        app:tint="@color/red"
+        android:contentDescription="TODO" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_read_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:tint="@color/white"
+        app:backgroundTint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/fab_read_save"
+        app:layout_constraintEnd_toEndOf="@+id/fab_read_save"
+        app:shapeAppearanceOverlay="@style/round"
+        app:srcCompat="@drawable/ic_like_white_outline"
+        android:contentDescription="TODO" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
